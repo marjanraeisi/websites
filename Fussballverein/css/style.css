@@ -1,0 +1,371 @@
+/* Grundlayout */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  color: white;
+  background: url('../img/mittlere-schusskinder.jpg') no-repeat center center/cover;
+  position: relative;
+}
+
+/* Container für alles */
+.container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* schwarzer Overlay */
+}
+
+/* Navigation oben */
+.top-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.search {
+  background: transparent;
+  border: 1px solid white;
+  padding: 6px 10px;
+  border-radius: 5px;
+  color: white;
+}
+
+
+input::placeholder{
+    color: white;
+    opacity: 0.3;
+}
+
+/* لوگو */
+.logo img {
+  height: 60px;
+  width: auto;
+}
+
+/* دکمه منو برای موبایل */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* منو اصلی */
+.nav-links ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+}
+
+/* افکت hover */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: blue;
+  bottom: -4px;
+  left: 0;
+  transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+
+.contact-section {
+  margin: 40px auto;
+  max-width: 600px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid white;
+  padding: 12px;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  width: 100%;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.contact-form button {
+  background-color: #00ffcc;
+  color: black;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #00ccaa;
+}
+
+
+/* دکمه باز کردن */
+.open-modal {
+  background-color: #00ffcc;
+  color: black;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* لایه پشت فرم */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+/* خود فرم */
+.modal-content {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+/* دکمه بستن */
+.close-modal {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+/* Vertikaler Text */
+.vertical-text {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  transform: rotate(180deg);
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  opacity: 0.9;
+}
+
+.vertical-text span {
+  font-weight: 100;
+}
+
+/* Haupttextfeld */
+.content-box {
+  position: absolute;
+  top: 16%;
+  left: 32%;
+  max-width: 400px;
+}
+
+.content-box p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.buttons button {
+  margin-right: 15px;
+  padding: 10px 20px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.buttons button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Box für nächstes Spiel */
+.next-game-box {
+  position: absolute;
+  bottom: 80px;
+  right: 50px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 15px 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+#countdown {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.next-game-box .icon {
+  font-size: 24px;
+}
+
+.next-game-box .date {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.next-game-box .time {
+  font-size: 24px;
+  margin-top: 5px;
+}
+
+/* Social-Media-Icons */
+.social-icons {
+  position: absolute;
+  top: 40%;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.social-icons a {
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .vertical-text {
+    font-size: 28px;
+    left: -20px;
+  }
+
+  .content-box {
+    left: 35%;
+    top: 30%;
+  }
+
+  .next-game-box {
+    right: 20px;
+    bottom: 40px;
+  }
+
+  .top-menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Animation Definitions */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+/* Fade-in für Texte */
+.content-box {
+  animation: fadeIn 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+/* Slide-in für Button-Reihe */
+.buttons {
+  animation: slideInLeft 1s ease-out 1s forwards;
+  opacity: 0;
+}
+
+/* Slide-in für Menü */
+.top-menu {
+  animation: slideInRight 1s ease-out;
+}
+
+/* Pulsierende Spielzeit-Box */
+.next-game-box {
+  animation: pulse 2.5s infinite ease-in-out;
+}
+
+/* Rotation der Social Icons beim Hover */
+.social-icons a {
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: rotate(15deg) scale(1.2);
+}
+

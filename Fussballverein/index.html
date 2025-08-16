@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fußballverein Landingpage</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Menüleiste -->
+      <header class="top-menu">
+        <!-- لوگو -->
+        <div class="logo">
+          <img src="img/logo.png" alt="Vereinslogo" />
+        </div>
+
+        <!-- منو -->
+        <nav class="nav-links" id="navLinks">
+          <ul>
+            <li><a href="#">Startseite</a></li>
+            <li><a href="#">Preise</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </nav>
+
+        <!-- جستجو -->
+        <input
+          type="text"
+          class="search"
+          placeholder="Suchen"
+          aria-label="Suche"
+        />
+
+        <!-- دکمه نمایش منو فقط برای موبایل -->
+        <button
+          class="menu-toggle"
+          aria-label="Menü ein-/ausblenden"
+          onclick="toggleMenu()"
+        >
+          ☰
+        </button>
+      </header>
+
+      <!-- Text vertikal -->
+      <div class="vertical-text">
+        <h1><span>SOCCER</span> <strong>TEAM</strong></h1>
+      </div>
+
+      <!-- Hauptinhalt -->
+      <div class="content-box">
+        <p>
+          Fußball ist eine Teamsportart,
+          <br> bei der es darum geht,
+          <br> durch das Kicken
+          des Balls ein Tor zu erzielen.
+        </p>
+        <div class="buttons">
+          <button class="open-modal">ABONNIEREN</button>
+          <button>JETZT WETTEN</button>
+        </div>
+      </div>
+
+      <!-- Spielzeit -->
+      <div class="next-game-box">
+        <div id="countdown" aria-label="Countdown bis zum Spielstart">
+          <span id="days">00</span>T <span id="hours">00</span>Std
+          <span id="minutes">00</span>Min <span id="seconds">00</span>Sek
+        </div>
+        <p><span class="icon">🏆</span> Nächstes Spiel</p>
+        <p class="date">21. Juni</p>
+        <p class="time">15:20 Uhr</p>
+      </div>
+
+      <!-- Social Media -->
+      <div class="social-icons">
+        <a
+          href="https://www.facebook.com"
+          target="_blank"
+          aria-label="Facebook"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.youtube.com" target="_blank" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+
+    <script>
+      const spielZeit = new Date("2025-06-21T15:20:00").getTime();
+
+      const countdownFunc = setInterval(function () {
+        const jetzt = new Date().getTime();
+        const abstand = spielZeit - jetzt;
+
+        const tage = Math.floor(abstand / (1000 * 60 * 60 * 24));
+        const stunden = Math.floor(
+          (abstand % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minuten = Math.floor((abstand % (1000 * 60 * 60)) / (1000 * 60));
+        const sekunden = Math.floor((abstand % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = tage
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("hours").innerText = stunden
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("minutes").innerText = minuten
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("seconds").innerText = sekunden
+          .toString()
+          .padStart(2, "0");
+
+        if (abstand < 0) {
+          clearInterval(countdownFunc);
+          document.getElementById("countdown").innerHTML =
+            "🎉 Das Spiel hat begonnen!";
+        }
+      }, 1000);
+    </script>
+
+
+<div class="modal" id="contactModal">
+  <div class="modal-content">
+    <span class="close-modal" aria-label="Modal schließen">&times;</span>
+    <form class="contact-form" aria-label="Kontaktformular">
+      <input type="text" name="name" placeholder="Dein Name" required>
+      <input type="email" name="email" placeholder="Deine E-Mail" required>
+      <textarea name="message" rows="4" placeholder="Deine Nachricht..." required></textarea>
+      <button type="submit">Absenden</button>
+    </form>
+  </div>
+</div>
+
+
+
+    <script>
+  const modal = document.getElementById("contactModal");
+  const openBtn = document.querySelector(".open-modal");
+  const closeBtn = document.querySelector(".close-modal");
+
+  openBtn.addEventListener("click", () => {
+    modal.style.display = "flex";
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // بستن با کلیک بیرون فرم
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+</script>
+
+
+  </body>
+</html>
