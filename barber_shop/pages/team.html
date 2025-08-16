@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Lernen Sie das Team von Mari Salon kennen"
+    />
+    <title>Mari Salon - Team</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body class="body-team">
+    <header class="header-team">
+      <div class="logo">
+        <a href="../index.html">
+          <img src="../bilder/logo5.png" alt="Mari Salon Logo" loading="lazy" />
+        </a>
+      </div>
+
+      <button
+        class="menu-toggle"
+        aria-controls="nav"
+        aria-expanded="false"
+        id="menu-toggle"
+      >
+        ☰<span class="sr-only">Menü öffnen</span>
+      </button>
+
+      <nav id="nav">
+        <ul>
+          <li>
+            <a href="../index.html"><i class="fa-solid fa-house"></i></a>
+          </li>
+          <li><a href="leistungen.html">Leistungen</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="team">
+      <section class="team-content" id="top">
+        <h1>Das sind wir!</h1>
+        <p>
+          Wir sind ein inhabergeführtes Friseurgeschäft und stolz darauf, ein
+          großartiges Team von professionellen Friseuren zu haben. Viel Wert und
+          viel Engagement investieren wir in die Ausbildung, deshalb wird unser
+          Team jedes Jahr mit neuen Auszubildenden bereichert. Als Experten für
+          Haarverlängerungen und Haarverdichtung mit der hochwertigen
+          Tressentechnik der Marken Simplie und Great Lengths. Mit
+          Balayage-Techniken, Komplettveränderungen, Hochzeitsfrisuren und
+          Make-up bieten wir unseren Kunden jeden Tag eine breite Palette
+          unseres Handwerks an. Unser Team besteht aus engagierten und
+          erfahrenen Friseuren, die sich darauf konzentrieren, deine Bedürfnisse
+          und Wünsche zu verstehen und eine individuelle Lösung für dein Haar zu
+          finden. Wir freuen uns auf deinen Besuch.
+        </p>
+
+        <div class="team-grid">
+          <!-- Team Member 1 -->
+          <div class="team-item">
+            <img
+              src="../bilder/team1.avif"
+              alt="Anna Müller, Friseurmeisterin bei Mari Salon"
+              class="team-image"
+              loading="lazy"
+            />
+            <div class="team-overlay">
+              <h3>Anna Müller</h3>
+              <p>Friseurmeisterin</p>
+            </div>
+          </div>
+          <!-- Team Member 2 -->
+          <div class="team-item">
+            <img
+              src="../bilder/team2.avif"
+              alt="Sophie Schmidt, Stylistin bei Mari Salon"
+              class="team-image"
+              loading="lazy"
+            />
+            <div class="team-overlay">
+              <h3>Sophie Schmidt</h3>
+              <p>Stylistin</p>
+            </div>
+          </div>
+          <!-- Team Member 3 -->
+          <div class="team-item">
+            <img
+              src="../bilder/team5.avif"
+              alt="Lena Fischer, Coloration-Spezialistin bei Mari Salon"
+              class="team-image"
+              loading="lazy"
+            />
+            <div class="team-overlay">
+              <h3>Lena Fischer</h3>
+              <p>Coloration-Spezialistin</p>
+            </div>
+          </div>
+          <!-- Team Member 4 -->
+          <div class="team-item">
+            <img
+              src="../bilder/team7.avif"
+              alt="Emma Weber, Makeup-Artistin bei Mari Salon"
+              class="team-image"
+              loading="lazy"
+            />
+            <div class="team-overlay">
+              <h3>Emma Weber</h3>
+              <p>Makeup-Artistin</p>
+            </div>
+          </div>
+          <!-- Team Member 5 -->
+          <div class="team-item">
+            <img
+              src="../bilder/team3.avif"
+              alt="Julia Becker, Hair-Extension-Spezialistin bei Mari Salon"
+              class="team-image"
+              loading="lazy"
+            />
+            <div class="team-overlay">
+              <h3>Julia Becker</h3>
+              <p>Hair-Extension-Spezialistin</p>
+            </div>
+          </div>
+          <!-- Team Member 6 -->
+          <div class="team-item">
+            <img
+              src="../bilder/team6.avif"
+              alt="Marie Hoffmann, OLAPLEX-Spezialistin bei Mari Salon"
+              class="team-image"
+              loading="lazy"
+            />
+            <div class="team-overlay">
+              <h3>Marie Hoffmann</h3>
+              <p>OLAPLEX-Spezialistin</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <a href="#top" class="scroll-to-top" aria-label="Zurück nach oben"
+      ><i class="fa-solid fa-circle-chevron-up"></i
+    ></a>
+
+    <footer>
+      <p>© 2025 Mari Salon – Alle Rechte vorbehalten</p>
+      <div class="social-icons">
+        <a href="#" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" target="_blank" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.getElementById("menu-toggle");
+      const nav = document.getElementById("nav");
+
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("show");
+        toggle.classList.toggle("rotate");
+      });
+    </script>
+  </body>
+</html>

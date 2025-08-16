@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Homepage der Friseur-Website" />
+    <title>Mari Salon Home</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <a href="index.html">
+          <img src="bilder/logo5.png" alt="Mari Salon Logo" />
+        </a>
+      </div>
+
+      <button
+        class="menu-toggle"
+        aria-controls="nav"
+        aria-expanded="false"
+        id="menu-toggle"
+      >
+        ☰<span class="sr-only">Menü öffnen</span>
+      </button>
+
+      <nav id="nav">
+        <ul>
+          <li>
+            <a href="index.html"><i class="fa-solid fa-house"></i></a>
+          </li>
+          <li><a href="pages/leistungen.html">Leistungen</a></li>
+          <li><a href="pages/team.html">Team</a></li>
+          <li><a href="pages/galerie.html">Galerie</a></li>
+          <li><a href="pages/kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero" role="img" aria-label="Frau entspannt sich im Salon">
+      <div class="hero-text">
+        <h1 class="typewriter">Perfektion ist, das Gesicht zu rahmen</h1>
+        <p>Erleben Sie Schönheit mit Stil, Ruhe und Eleganz.</p>
+
+        <!--  Jetzt Buchen  -->
+        <button
+          class="buchen-button"
+          aria-label="Termin buchen"
+          onclick="openModal()"
+        >
+          Jetzt Buchen
+        </button>
+
+        <!--  reserve modal -->
+        <div
+          id="buchen-modal"
+          class="modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
+        >
+          <div class="modal-content">
+            <span
+              class="modal-close"
+              onclick="closeModal()"
+              aria-label="Modal schließen"
+              >&times;</span
+            >
+            <h2 id="modal-title">Termin Buchen</h2>
+            <form id="buchen-form">
+              <label for="date-select">Verfügbare Termine:</label>
+              <select id="date-select" name="date" required>
+                <option value="" disabled selected>Wählen Sie ein Datum</option>
+                <option value="2025-06-02">Montag, 2. Juni 2025 - 10:00</option>
+                <option value="2025-06-03">
+                  Dienstag, 3. Juni 2025 - 14:00
+                </option>
+                <option value="2025-06-04">
+                  Mittwoch, 4. Juni 2025 - 11:00
+                </option>
+                <option value="2025-06-05">
+                  Donnerstag, 5. Juni 2025 - 15:00
+                </option>
+                <option value="2025-06-06">
+                  Freitag, 6. Juni 2025 - 13:00
+                </option>
+              </select>
+              <button type="submit" class="submit-button">Bestätigen</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Mari Salon – Alle Rechte vorbehalten</p>
+      <div class="social-icons">
+        <a href="#" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" target="_blank" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.getElementById("menu-toggle");
+      const nav = document.getElementById("nav");
+
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("show");
+        toggle.classList.toggle("rotate");
+      });
+
+      function openModal() {
+        const modal = document.getElementById("buchen-modal");
+        modal.classList.add("show");
+        document.body.style.overflow = "hidden"; // prevent scroll
+        modal.querySelector("select").focus(); //  focus on select
+      }
+
+      function closeModal() {
+        const modal = document.getElementById("buchen-modal");
+        modal.classList.remove("show");
+        document.body.style.overflow = "auto"; // enable scroll
+      }
+
+      // close modal
+      document.getElementById("buchen-modal").addEventListener("click", (e) => {
+        if (e.target === e.currentTarget) closeModal();
+      });
+
+      // close modal with Esc
+      document.addEventListener("keydown", (e) => {
+        if (
+          e.key === "Escape" &&
+          document.getElementById("buchen-modal").classList.contains("show")
+        ) {
+          closeModal();
+        }
+      });
+
+      // submit form
+      document.getElementById("buchen-form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert(
+          "Termin gebucht! Datum: " +
+            document.getElementById("date-select").value
+        );
+        closeModal();
+      });
+    </script>
+  </body>
+</html>
