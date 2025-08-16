@@ -1,0 +1,458 @@
+/* #D9A407
+#D98F07
+#8C7561
+#8C3807
+#F2F2F2 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  animation: slideDown 1s ease-out forwards;
+}
+
+#top_bar {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  height: 8%;
+}
+
+.logo {
+  width: 15%;
+  position: relative;
+}
+
+.logo img {
+  margin: 15px;
+  width: 80%;
+  height: 80%;
+}
+
+/* .nav {
+  width: 100%;
+}*/
+
+.Desktop-wrapper {
+  display: none;
+}
+
+.hamburger-wrapper .mobile-menu {
+  display: none;
+
+}
+
+/* وقتی موس روی hamburger-wrapper هست، منو رو نشون بده */
+.hamburger-wrapper:hover .mobile-menu,
+.hamburger-wrapper:focus-within .mobile-menu {
+  display: flex;
+}
+
+
+
+.hamburger-wrapper nav {
+  width: 80%;
+  display: flex;
+
+}
+
+.hamburger-wrapper nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 60px;
+  right: 0;
+}
+
+.hamburger-wrapper nav ul li {
+  /* display: inline; */
+  position: relative;
+  /* margin: 10px; */
+  line-height: 250%;
+  /* margin: 0; */
+
+}
+
+.hamburger-wrapper nav ul li:hover {
+  border-bottom: 1px solid #000;
+  color: #000;
+}
+
+.hamburger-wrapper nav ul li a {
+  text-decoration: none;
+  text-align: center;
+  color: #746457;
+  font-family: AncizarSans-Italic-VariableFont_wght;
+  font-size: 1.4rem;
+  padding: 5px;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.hamburger-wrapper nav ul li a:hover {
+  color: #000;
+}
+
+/* ostaaaaaaaaaaaad */
+
+.hamburger-wrapper .dropdown-menu {
+  display: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+  position: absolute;
+  top: 0;
+  right: 100%;
+}
+
+.hamburger-wrapper .dropdown-menu li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+}
+
+.hamburger-wrapper .dropdown-menu li a:hover,
+.hamburger-wrapper .dropdown-menu li a:focus {
+  background-color: #8C7561;
+  color: black;
+}
+
+/* Dropdown öffnet sich bei Hover oder Fokus  */
+
+.hamburger-wrapper li.dropdown:hover .dropdown-menu,
+.hamburger-wrapper li.dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+
+
+
+
+
+
+.hamburger-menu a {
+  text-decoration: none;
+  font-size: 2rem;
+  color: black;
+  margin: 0.1rem 1.3rem;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  transition: transform 0.3s ease;
+
+}
+
+.hamburger-menu a:hover,
+.hamburger-menu a:focus {
+  /* display: block; */
+  transform: rotate(90deg);
+
+}
+
+#home_page {
+  background-image: url(../img/bg.jpeg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 66vh;
+}
+
+.erstgespraech {
+  position: fixed;
+  top: 59vh;
+  right: 15px;
+  animation: easing 1s ease-out;
+
+}
+
+.erstgespraech_button i {
+  font-size: 3rem;
+  color: #D98F07;
+  /* margin-top: 15rem; */
+}
+
+.erstgespraech:hover {
+  transform: rotate(350deg);
+}
+
+#home_title {
+  position: absolute;
+  top: 60%;
+  left: 10px;
+  /* display: flex;
+justify-content: center;
+align-items:center; */
+  /* padding: 70px; */
+  height: 1.5rem;
+  font-size: 1.5rem;
+  font-family: AncizarSans-Italic-VariableFont_wght;
+  text-align: center;
+  color: #8c3807;
+}
+
+.container_action_redesign {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px 20px;
+  background: #f7f7f7;
+  flex-wrap: wrap;
+  animation: easing 1s ease-out;
+
+}
+
+.action_card {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  width: 31%;
+  border-radius: 16px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.action_card:hover {
+  transform: translateY(-5px);
+}
+
+.icon_wrapper {
+  background-color: #d9a407;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon_wrapper i {
+  color: #fff;
+  font-size: 32px;
+}
+
+.action_card h3 {
+  font-family: AncizarSans-VariableFont_wght;
+  font-size: 1.3rem;
+  color: #d98f07;
+  margin-bottom: 10px;
+}
+
+.action_card p {
+  font-size: 1rem;
+  color: #8c7561;
+}
+
+@font-face {
+  font-family: "AncizarSans-VariableFont_wght";
+  src: url(../font/AncizarSans-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "AncizarSans-Italic-VariableFont_wght";
+  src: url(../font/AncizarSans-Italic-VariableFont_wght.ttf);
+}
+
+/* animaaaaaaaaaaaaaaaaaaaaaation */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes easing {
+  0% {
+    transform: translateX(-120px);
+  }
+
+  75% {
+    transform: translateX(40px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fill {
+  0% {
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+  }
+
+  50% {
+
+    width: 100px;
+    height: 100px;
+    border-radius: 20%;
+  }
+
+  100% {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  #top_bar {
+    background-color: rgba(255, 255, 255, 0.4);
+    top: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    height: 8%;
+    position: fixed;
+  }
+
+  .logo {
+    width: 15%;
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+  .hamburger-menu a {
+    display: none;
+  }
+
+  .Desktop-wrapper {
+    width: 100%;
+    display: flex;
+  }
+
+  nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  nav ul li {
+    display: inline;
+    position: relative;
+    /* margin: 10px; */
+    line-height: 250%;
+    margin: 0;
+  }
+
+  nav ul li:hover {
+    border-bottom: 1px solid #000;
+    color: #000;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    text-align: center;
+    color: #746457;
+    font-family: AncizarSans-Italic-VariableFont_wght;
+    font-size: 1.4rem;
+    padding: 5px;
+    display: flex;
+    transition: background-color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #000;
+  }
+
+  /* ostaaaaaaaaaaaad */
+
+  .dropdown-menu {
+    display: none;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 0.5rem 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+
+  .dropdown-menu li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+  }
+
+  .dropdown-menu li a:hover,
+  .dropdown-menu li a:focus {
+    background-color: #8C7561;
+    color: black;
+  }
+
+  /* Dropdown öffnet sich bei Hover oder Fokus  */
+
+  li.dropdown:hover .dropdown-menu,
+  li.dropdown:focus-within .dropdown-menu {
+    display: block;
+  }
+}
+
+
+/* desktop */
+@media (min-width: 1024px) {
+  #top_bar {
+    background-color: rgba(255, 255, 255, 0.4);
+    top: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+  }
+
+  .logo {
+    width: 15%;
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .hamburger-menu a {
+    display: none;
+  }
+
+  nav ul {
+    display: flex;
+    list-style-type: none;
+  }
+
+  nav ul li {
+    display: inline;
+    /* margin: 10px; */
+    line-height: 200%;
+  }
+
+  nav ul li:hover {
+    /* background-color: rgb(223, 221, 216); */
+    border-bottom: 1px solid #000;
+    color: #000;
+  }
+}   
