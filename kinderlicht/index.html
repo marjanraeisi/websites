@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="KinderLicht - Unterstützung für bedürftige Kinder mit Bildung, Nahrung und Unterkunft" />
+    <title>KinderLicht - Unterstützung für Kinder</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header id="home" class="header">
+        <div class="light-particles">
+            <div class="light-particle"></div>
+            <div class="light-particle"></div>
+            <div class="light-particle"></div>
+            <div class="light-particle"></div>
+            <div class="light-particle"></div>
+            <div class="light-particle"></div>
+            <div class="light-particle"></div>
+            <div class="light-particle"></div>
+            <div class="light-particle"></div>
+            <div class="light-particle"></div>
+            <div class="light-particle"></div>
+            <div class="light-particle"></div>
+            <div class="light-particle"></div>
+            <div class="light-particle"></div>
+            <div class="light-particle"></div>
+            <div class="light-particle"></div>
+            <div class="light-particle"></div>
+            <div class="light-particle"></div>
+            <div class="light-particle"></div>
+            <div class="light-particle"></div>
+        </div>
+
+        <nav class="nav">
+            <div class="logo">
+                           <a href="#"><img src="bilder/Gemini_logo2.jpg" alt="Kinderlicht"></a>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Über Uns</a></li>
+                <li><a href="#gallery">Galerie</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Unterstützung für Kinder</h1>
+            <p>Helfen Sie uns, bedürftigen Kindern Bildung, Nahrung und ein Zuhause zu geben.</p>
+            <a href="#jetzt-helfen" class="cta-button">Jetzt Helfen</a>
+
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="section about">
+            <h2>Über Uns</h2>
+            <p>KinderLicht ist eine gemeinnützige Initiative, die sich für das Wohl von bedürftigen Kindern einsetzt. Wir bieten Bildung, warme Mahlzeiten und Unterkunft, um ihnen eine bessere Zukunft zu ermöglichen.</p>
+        </section>
+
+        <section id="gallery" class="section gallery">
+            <h2>Galerie</h2>
+            <div class="gallery-grid">
+                <figure>
+                    <img src="bilder/schule1.jpg" alt="Kind beim Lernen in der Schule" loading="lazy" />
+                    <figcaption>Kind beim Lernen</figcaption>
+                </figure>
+                <figure>
+                    <img src="bilder/essen.jpg" alt="Kinder beim gemeinsamen Essen" loading="lazy" />
+                    <figcaption>Gemeinsames Essen</figcaption>
+                </figure>
+                <figure>
+                    <img src="bilder/park1.jpg" alt="Kind spielt im Park" loading="lazy" />
+                    <figcaption>Spielen im Park</figcaption>
+                </figure>
+                <figure>
+                    <img src="bilder/zuhause1.jpg" alt="Kinder in einem neuen Zuhause" loading="lazy" />
+                    <figcaption>Neues Zuhause</figcaption>
+                </figure>
+            </div>
+        </section>
+
+
+        <section id="jetzt-helfen" class="section helfen">
+            <h2>So können Sie helfen</h2>
+            <p>Ihre Unterstützung hilft uns, Kindern eine bessere Zukunft zu ermöglichen. Auch kleine Beiträge machen einen großen Unterschied.</p>
+            <ul>
+                <li><i class="fas fa-hand-holding-heart"></i> Spenden Sie einmalig oder regelmäßig</li>
+                <li><i class="fas fa-users"></i> Werden Sie Fördermitglied</li>
+                <li><i class="fas fa-share-alt"></i> Teilen Sie unsere Mission mit anderen</li>
+            </ul>
+            <p>Kontaktieren Sie uns direkt unter: <a href="mailto:hilfe@kinderlicht.de">hilfe@kinderlicht.de</a></p>
+        </section>
+        
+        <section id="contact" class="section contact">
+            <h2>Kontakt</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-location-dot"></i> KinderLicht e.V., Musterstraße 10, 40115 Düsseldorf</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+491234567890">+49 123 4567890</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@kinderlicht.de">info@kinderlicht.de</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 KinderLicht – Alle Rechte vorbehalten</p>
+    </footer>
+
+    <a href="#home" class="scroll-to-top" aria-label="Nach oben"><i class="fas fa-chevron-up"></i></a>
+
+    <div id="video-widget">
+        <button id="close-video">&times;</button>
+        <video src="video/20250603.mp4" autoplay muted loop playsinline controls></video>
+    </div>
+
+
+    <script>
+        document.getElementById("close-video").addEventListener("click", function () {
+            document.getElementById("video-widget").style.display = "none";
+        });
+    </script>
+    
+</body>
+</html>
