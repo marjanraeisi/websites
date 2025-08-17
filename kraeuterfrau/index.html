@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildpflanzen & Kräuter – Karen Silberstein</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { 
+            scroll-behavior: smooth;
+        }
+        .hero-container{
+            /* background: url('images/background-image.png') center/cover no-repeat; */
+        }
+        .logo{
+            width: 100px;
+            height: auto;
+        }
+        .hero-anmelden{
+            position: absolute;
+            left: 0;
+            top: 110px;
+            font-size: 16px;
+            font-weight: bold;
+            background: burlywood;
+            border-radius: 0;
+            border: 0 solid burlywood;
+        }
+        .hero-anmelden:hover {            
+            background: rgb(187, 109, 14);            
+        }
+        .navbar-light{
+            background-color: white !important;
+        }
+        .navbar-collapse ul {
+            display: flex;
+        }
+        .navbar-collapse ul li {
+            font-weight: 600;
+            font-size: 24px;
+            margin: auto 15px;
+            color: #3B5B3E;
+        }
+        .hero {
+            background: url('images/hero.png') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .hero-overlay {
+                background: rgba(0, 0, 0, 0.5);
+                width: 50%;
+                height: 12vh;
+                padding: 30px 0 0 0;
+                position: absolute;
+                top: 125px;
+                left: 25px;
+        }
+        .hero-overlay h1{
+            font-size: 32px;
+            font-family: EB Garamond;
+        }
+        #services h4{
+            color: #3B5B3E;
+        }
+     .d-flex {
+        display: flex;
+        justify-content: space-between;
+    }
+    .wanderungen{
+        border-left: solid 1px #ccc;
+        padding-left: 10px;
+    }
+    .w-33 {
+        width: 33.33%;
+        height: 300px;
+        margin-right: 10px;
+    }
+    .saison-spezial{
+        position: relative;
+        left: 15px;
+        top: -145px;
+        border-radius: 0;
+        font-weight: bold;
+        background-color: rgba(0, 0, 0, 0.2); /* Schwarzer Hintergrund mit 50% Transparenz */
+        color: white; /* Textfarbe */
+        border: 1px solid #fff; /* Weißer Rahmen */
+        padding: 10px 20px; /* Innenabstand */
+        cursor: pointer; /* Zeigt an, dass es klickbar ist */
+    }
+    .saison-spezial:hover{
+        border: 1px solid #fff; /* Weißer Rahmen */
+        background-color: rgba(0, 0, 0, 0.7); /* Schwarzer Hintergrund mit 50% Transparenz */
+    }
+    .carousel-indicators {
+        position: relative;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .carousel-indicators button {
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin: 0 5px;
+    }
+
+    .carousel-indicators .active {
+        background-color: #000;
+    }
+    .Kundenstimmung_icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 50% !important;
+
+    }
+    .kraft-row{
+        background: url('images/kraft.jpg') center/cover no-repeat;
+            height: 45vh;
+            display: flex;
+            color: white;
+            text-align: center;
+            filter: brightness(90%);
+            align-items: center;
+            z-index: -1;
+            position: relative;
+    }
+    .kraft-content {
+        position: absolute;
+        left: 50%;
+        top: 30%;
+        width: 73vw;
+        height: 20vh;
+        transform: translateX(-50%);
+        color: white;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 15px 5px;        
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .kraft-row::before{
+        background-color:rgba(0, 0, 0, 0.4);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        
+    }
+    .navbar-nav a:hover{
+        border-bottom: solid 2px brown;
+    }
+    .kraft-row h2, .kraft-row p{
+        color: #fff;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+        z-index: 1;
+
+       }
+        .section-title {
+            margin-top: 50px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #3B5B3E;
+            font-weight: bold;
+            font-size: 48px;
+            font-family: EB Garamond;
+        }
+        .spitzwegerich-row {
+            margin: 50px  0 0;
+        }
+        
+        .spitzwegerich-row p,  .spitzwegerich-row h4{
+            line-height: 30px;
+            font-size: 20px;
+            font-style: italic;   
+        }
+        .spitzwegerich-row > div {
+            padding-top: 20px;
+        }
+        footer {     
+            padding: 20px 0;
+            text-align: center;
+        }
+        .img-angebot{
+            height: 410px;
+        }
+        .ueber-mich p{
+            line-height: 30px;
+        }
+        .ueber-mich h2{
+            margin-bottom: 20px;
+            font-size: 40px;
+            font-weight: bold;
+            font-family: EB Garamond;
+            color: #3B5B3E;
+        }
+        .column-container p{
+            float: left;
+        }
+        .stimmung-span {
+            float: right;
+            position: relative;
+            top: -75px;
+            right: -97px;
+        }
+        .carousel-caption {
+            position: absolute;   
+            left: 50%;
+            top: 45%;
+            width: 73vw;
+            height: 20vh;
+            transform: translateX(-50%);
+            color: white;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px 5px;
+            max-height: 50%;
+            overflow-y: auto;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+             justify-content: space-between;
+            }
+        
+        #contact{
+            background-color: #fff;
+        }
+        .address{
+            list-style: none;
+            text-align: center;
+            margin: 10px auto;
+            font-weight: bold;
+        }
+        .column-container {           
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 15px;
+            margin-right: 10px;
+            width: 30%; 
+            height: 25vh;            
+            background: #FFFFFF;
+            border: 1px solid #000000;
+            border-radius: 0px;
+           
+            order: 0;
+            flex-grow: 1; 
+        }
+         .footer-top {
+            height: 20vh;            
+        }
+        .footer-top ul{
+            list-style: none;
+            position: absolute;
+            left: 30%;   
+            margin-top: 15px;         
+        }
+        .footer-top ul li{
+            flex-direction: row;
+            display: block;
+            width: 120px;
+            float: left;            
+        }
+        .modal-body img { 
+        object-fit: cover;
+        }
+
+    @media (max-width: 768px) { /* Medium devices (tablets, 768px and up) */
+  
+   .column-container {          
+                     
+            width: 98%;   
+            margin-bottom: 15px;                  
+        }
+        .navbar-toggler{
+            position: absolute;
+            right: 65px;
+        }
+         .navbar-toggler::after{
+            position: unset;
+            right: 65px;
+        }
+        .hero-overlay{
+            height: 24vh;
+        }
+        .hero-anmelden{
+            top: 220px;
+        }
+        
+        .container, .container-sm{
+            max-width: unset;
+        }
+        .carousel{
+            margin: 0 0 0 10px;
+        }
+
+ 
+
+        .w-33 {
+            width: 53%;
+            height: 30vh;            
+        }
+        .kraft-content{
+            height: 40vh;
+        top: 8%;
+        }
+         .spitzwegerich-row img {
+            width: 53%;
+            height: 30vh;
+            position: relative;
+            left: 20%;
+        }
+        .footer-top ul {        
+        left: 8%;
+    }
+
+
+}
+
+        
+    </style>
+</head>
+<body>
+<section class="hero-container">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            
+             <img src="images/logo-schule-Karen-nue.jpg" class="d-block logo" alt="Bild 2">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Menü öffnen">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#impressionen">Galerie</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">Wer bin ich</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Was ich anbiete</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
+            </ul>
+        </div>
+        <button class="btn btn-success btn-md mt-1">EN</button>
+    </div>
+</nav>
+
+<!-- Hero -->
+
+    <header class="hero">
+        <div class="hero-overlay">
+            <h1>Tauche mit mir ein in die Welt der Wildpflanzen</h1>         
+            <a href="#services" class="btn btn-success btn-lg mt-3 hero-anmelden">Anmelden</a>            
+        </div>
+    </header>
+    <!-- <a href="#services" class="btn btn-success btn-lg mt-3 saison-spezial">Saison-Spezial</a> -->
+
+    <button type="button" class="btn btn-primary saison-spezial" data-bs-toggle="modal" data-bs-target="#saisonSpezialModal">
+    Saison-Spezial
+    </button>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="saisonSpezialModal" tabindex="-1" aria-labelledby="saisonSpezialLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="saisonSpezialLabel">Sommer-Special: Mädesüß-Wanderung & Limonade-Workshop</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Entdecken Sie mit mir die Königin des Sommers: den Mädesüß! In diesem Special lade ich Sie ein, diese duftende Pflanze zu finden und zu erkennen. Nach unserer Wanderung stellen wir gemeinsam eine erfrischende Mädesüß-Limonade her.</p>
+        <ul>
+          <li>Geführte Wildpflanzen-Wanderung</li>
+          <li>Wissenswertes zur Pflanze und ihrer Heilkraft</li>
+          <li>Gemeinsame Zubereitung von Limonade und andere Produkte</li>
+        </ul>
+        <p>Sichern Sie sich jetzt Ihren Platz!</p>
+        <button type="button" class="btn btn-success">Jetzt Registrieren</button>
+        <div class="row mt-3">
+          <div class="col-4">
+            <img src="images/pop-up-1.png" alt="Bild 1" class="img-fluid">
+          </div>
+          <div class="col-4">
+            <img src="images/pop-up-2.png" alt="Bild 2" class="img-fluid">
+          </div>
+          <div class="col-4">
+            <img src="images/pop-up-3.png" alt="Bild 3" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</section>
+<section class="container">
+
+    <div class="row spitzwegerich-row" style="width: 100%; padding: 0;">
+        <img src="images/Spitzwegerich.png" class="d-block w-33 col-md-4" alt="Spitzwegerich">
+        <div class="col-md-7">
+        <h4>„Wo sich der Wegerich niederlässt, bleibt auch der Mensch.“</h4>
+
+        <p>
+            Der Spitzwegerich (Plantago lanceolata) ist eine der bekanntesten heimischen Heilpflanzen. Man erkennt ihn
+            an
+            seinen langen, schmalen Blättern mit parallelen Blattnerven.
+            Er wird traditionell bei Erkältungen, Husten und Atemwegsbeschwerden eingesetzt, da er entzündungshemmend
+            und
+            schleimlösend wirkt. Als „Pflaster der Natur“ helfen die zerdrückten Blätter bei kleineren Wunden,
+            Insektenstichen oder Blasen.
+            Junge Blätter können zudem als Zutat für Salate oder Kräuterquark verwendet werden. Der Spitzwegerich ist
+            damit
+            nicht nur eine wichtige Heil-, sondern auch eine vielseitige Wildpflanze.
+        </p></div>
+    </div>
+</section>
+
+<!-- Impressionen -->
+<section id="impressionen" class="container">
+    <h2 class="section-title">Impressionen aus der Natur</h2>
+    <div id="carouselImpressionen" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="d-flex">
+                    <img src="images/slide_1.jpg" class="d-block w-33" alt="Bild 1">
+                    <img src="images/slide_2.jpg" class="d-block w-33" alt="Bild 2">
+                    <img src="images/slide_3.jpg" class="d-block w-33" alt="Bild 3">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex">
+                    <img src="images/slide_4.jpg" class="d-block w-33" alt="Bild 1">
+                    <img src="images/slide_5.jpg" class="d-block w-33" alt="Bild 2">
+                    <img src="images/slide_6.jpg" class="d-block w-33" alt="Bild 3">
+                </div>
+            </div>
+            <!-- Weitere Slides können hier hinzugefügt werden -->
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselImpressionen" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselImpressionen" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselImpressionen" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselImpressionen" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Über mich -->
+<section id="about" class="container my-5">
+    <div class="row align-items-center">
+        <div class="col-md-4">
+            <img src="images/Persona.jpg" class="img-fluid rounded" alt="Karen Silberstein">
+        </div>
+        <div class="col-md-8 ueber-mich">
+            <h2>Hallo ich bin Karen Silberstein</h2>
+            <p>Ich lade dich ein, die faszinierende Welt der Wildpflanzen zu erkunden.
+                Seit 30 Jahren sammle und nutze ich Wildkräuter für die Küche, zur Körperpflege, Gesundheit und
+                Dekoration.
+                Was als Hobby begann, ist zu meiner Berufung geworden.
+
+                Nachdem ich eine Ausbildung zur Kräuterpädagogin und IHK-geprüften Fachkraft für Gewürzkunde absolviert
+                habe, teile ich mein Wissen nun mit anderen.
+                Auf meinen Wanderungen zeige ich, wie vielseitig und wertvoll die Pflanzen in unserer Umgebung sind.
+                Gemeinsam lernen wir, sie zu bestimmen, zu verarbeiten und ihre besonderen Inhaltsstoffe zu entdecken.
+
+                Der Spitzwegerich symbolisiert für mich, wie unscheinbare Pflanzen auf den ersten Blick wirken können,
+                aber bei genauerer Betrachtung eine enorme Kraft und Vielfalt in sich tragen.
+                Ähnlich ist es mit Löwenzahn, Schafgarbe, Brennnessel und vielen anderen. Ein gewisser Zauber bleibt
+                dabei immer erhalten – diesen möchte ich mit dir teilen.
+
+                Neben den Wildpflanzen sind auch Kalligraphie und Keramik meine Leidenschaften.
+                Ich verbinde diese Hobbys gerne, zum Beispiel indem ich Teetassen gestalte oder Etiketten für
+                selbstgemachte Kräuterprodukte beschrifte.</p>
+        </div>
+    </div>
+</section>
+
+<section id="kraft" class="container my-5">
+<div class="row kraft-row">
+    <div class="kraft-content">
+        <div class="col-md-12">
+            <h2>Die Kraft der Wildpflanzen für Gesundheit und Genuss.</h2>
+        </div>
+        <div class="col-md-12">
+            <p>Meine Angebote richten sich an alle die neugierig sind und Lust haben sich mit mir auf den Weg zu machen –
+                bei einer Kräuterwanderung durch den eigenen Garten, auf eine nahegelegene Wiese oder in den Wald. Wir
+                können auch gemeinsam Wildpflanzen und Kräuter verarbeiten, um sie aufzubewahren, zu konversieren und
+                Produkte herzustellen oder in einem gemeinsamen Mahl zu genießen</p>
+        </div>
+    </div>
+    </div>
+
+</section>
+
+<!-- Angebote -->
+<section id="services" class="container my-5">
+    <!-- <h2 class="section-title">Was ich anbiete</h2> -->
+    <div class="row">
+        <div class="col-md-7">
+        
+        
+            <div class="col-md-12 wanderungen">
+                <h4>Kräuterwanderungen</h4>
+                <p>Gemeinsam begeben wir uns auf einen Streifzug durch die unmittelbare Umgebung (1-1,5 h).
+                    Ich zeige euch wilde Pflanzen, wir schauen uns ihre Erkennungsmerkmale an und ich gebe euch wichtige Tipps zum
+                    Sammeln und zur Weiterverarbeitung der Wildpflanzen.
+                    Je nach Jahreszeit und Personenkreis setze ich thematische Schwerpunkte: „Was wächst vor meiner Haustür?“ „Fit
+                    ins Frühjahr“ „Magie der Kräuter – Mythen, Märchen und Legenden“ „Wildpflanzen für die Küche“.</p>
+            </div>
+            <div class="col-md-12">
+                <h4>Kräuter-Workshops</h4>
+                <p>Vorzugsweise direkt im Anschluss an eine Wanderung oder als unabhängiges Event, verarbeiten wir die Wildpflanzen, Früchte oder Pflanzenteile. Tee Tinkturen Cremes Liköre Gerichte mit Wildpflanzen und Kräutern.</p>
+            </div>
+            <div class="col-md-12">
+                <h4>Kalligrafie & Keramik</h4>
+                <p>In einem Wochenendkurs möchte ich mit euch Wildpflanzen sammeln, sie verarbeiten und Gefäße aus Ton mit den Pflanzen dekorieren, die Produkte beschriften oder eigene Ideen umsetzen..</p>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <img src="images/angebot.jpg" class="img-fluid img-angebot" alt="Karen Silberstein">
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Kundenstimmen -->
+<section id="kunden" class="container my-5">
+    <h2 class="section-title">Kundenstimmen</h2>
+    <div id="carouselKunden" class="carousel slide" data-bs-ride="carousel">
+        <div class="row text-center">
+            
+                <div class="column-container">
+                    <p><img src="images/5_stars.webp" style="width: 100px;" class="img-fluid rounded" alt=""></p>
+                    <p>"Karen hat mir die Welt der Wildpflanzen eröffnet!"</p>
+                    <p>
+                        <img src="images/Person_1.png" class="img-fluid rounded Kundenstimmung_icon" alt="">
+                            <div class="stimmung-span">
+                                <span>Anna Müller</span> <br>
+                                <span>Leiterin, Naturverein</span>
+                            </div>
+                        </p>
+                </div>
+            
+            
+                <div class="column-container">
+                   <p><img src="images/4_stars.jpg" style="width: 100px;" class="img-fluid rounded" alt=""></p>
+                    <p>"Ich habe so viel über Kräuter gelernt!"</p>
+                    <p>                        
+                         <img src="images/Person_3.png" class="img-fluid rounded Kundenstimmung_icon" alt="">
+                        <div class="stimmung-span">
+                            <span>Peter Schmidt</span> <br>
+                            <span>Koch, Restaurant</span>
+                    </div>
+                    </p>
+                </div>
+           
+          
+                <div class="column-container">
+                    <p><img src="images/4_half_stars.jpg" style="width: 100px;" class="img-fluid rounded" alt=""></p>
+                    
+                    <p>"Die Workshops sind sehr lehrreich und inspirierend!"</p>
+                    <p>
+                       <img src="images/Person_2.png" class="img-fluid rounded Kundenstimmung_icon" alt="">
+                        <div class="stimmung-span">
+                            <span>Lisa Becker</span> <br>
+                            <span>Gartenliebhaberin, Bloggerin</span> 
+                        </div>  
+                    </p>
+                </div>
+           
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselKunden" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselKunden" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</section>
+
+<!-- Kontakt -->
+<section id="contact" class="container my-5">
+    <h2 class="section-title">Kontaktieren Sie uns</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <iframe src="https://www.google.com/maps/embed?..." width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <ul class="address">
+                <li>Karen Silberstein</li>
+                <li>Dorfstraße 34</li>
+                <li>17153 Grammentin</li>
+                <li>karen-silberstein@t-online.de</li>
+                <li>0160 7432760</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-Mail</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Nachricht</label>
+                    <textarea class="form-control" id="message" rows="3"></textarea>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="privacy">
+                    <label class="form-check-label" for="privacy">Ich akzeptiere die Datenschutzerklärung</label>
+                </div>
+                <button type="submit" class="btn btn-success">Absenden</button>
+            </form>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+
+    <section class="footer-top">
+            <img width="200px" src="images/logo-schule-Karen-nue.jpg" alt="">
+            <ul>
+                <li>Über mich</li>
+                <li>Angebote</li>
+                <li>Kontakt</li>
+                <li>Impressum</li>
+            </ul>
+    </section>
+    <hr>
+    <p>&copy; 2025 Karen Silberstein – Wildpflanzen & Kräuter</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
